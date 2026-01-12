@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>은효포토카드 맞추기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      @font-face {
+        font-family: "LotteriaChwapttaenggyeo";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+      body {
+        position: relative;
+        background-color: #ebe5df;
+      }
+
+      #main01 h1 {
+        color: #72957d;
+        font-family: "LotteriaChwapttaenggyeo";
+        font-size: 32px;
+        text-align: center;
+        margin-top: 32px;
+      }
+
+      .wrap_card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .card_inner {
+        width: 700px;
+        height: 700px;
+        background-color: #fff;
+        padding: 15px;
+      }
+
+      .card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-around;
+        width: 100%;
+        height: 100%;
+      }
+
+      .card li {
+        width: calc(100% / 4 - 15px);
+        height: calc(100% / 3 - 15px);
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+
+      .card li .view {
+        position: absolute;
+        backface-visibility: hidden;
+        transition: transform 0.5s linear;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      .card li .view img {
+        width: 150px;
+      }
+
+      .card li .view.front {
+        z-index: 10;
+        transform: rotateY(0deg);
+      }
+
+      .card li .view.back {
+        transform: rotateY(180deg);
+      }
+
+      .card li.flip .view.front {
+        transform: rotateY(-180deg);
+      }
+      .card li.flip .view.back {
+        transform: rotateY(0deg);
+      }
+      .card li.shake {
+        animation: shake 0.35s ease-in-out;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+        20% {
+          transform: translateX(-13px);
+        }
+        40% {
+          transform: translateX(13px);
+        }
+        60% {
+          transform: translateX(-8px);
+        }
+        80% {
+          transform: translateX(8px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main01">
+      <h1>은효의 카드 맞추기!</h1>
+    </main>
+    <main class="wrap_card">
+      <div class="card_inner">
+        <ul class="card">
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img01.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img05.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img03.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img02.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img04.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img02.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img04.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img06.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img05.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img03.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img01.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="./img/card_back.jpg" alt="" />
+            </div>
+            <div class="view back">
+              <img src="./img/img06.jpg" alt="" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+  <script>
+    const memoryCards = document.querySelectorAll(".card li"); //카드들
+
+    let cardOne, cardTwo; //첫번째 선택한 카드의 정보와 두번째 선택 한 카드의 정보를 저장할 변수
+    let disableDeck = false; //트리거 변수
+
+    let matchedCount = 0; // 맞춘 카드 쌍 개수
+    const totalPairs = memoryCards.length / 2; // 전체 쌍 수
+
+    function flipCard(e) {
+      let clickedCard = e.target; //변수에 클릭된 카드를 저장
+
+      if (clickedCard != cardOne && !disableDeck) {
+        clickedCard.classList.add("flip");
+
+        if (!cardOne) {
+          return (cardOne = clickedCard);
+        }
+
+        cardTwo = clickedCard;
+        disableDeck = true;
+
+        // 카드정보 가져오기
+        let cardOneImg = cardOne.querySelector(".back img").src;
+        let cardTwoImg = cardTwo.querySelector(".back img").src;
+
+        matchcards(cardOneImg, cardTwoImg);
+      }
+    }
+
+    function matchcards(img1, img2) {
+      if (img1 == img2) {
+        matchedCount++; // ⭐ 성공 시 증가
+
+        cardOne.removeEventListener("click", flipCard);
+        cardTwo.removeEventListener("click", flipCard);
+        cardOne = cardTwo = "";
+        disableDeck = false;
+
+        // ⭐ 모든 카드가 맞았는지 체크
+        if (matchedCount === totalPairs) {
+          setTimeout(() => {
+            alert("내 진심이 보여...? 널 놀리기위한 진심...");
+          }, 300);
+        }
+
+        console.log(matchedCount);
+      } else {
+        setTimeout(() => {
+          cardOne.classList.add("shake");
+          cardTwo.classList.add("shake");
+        }, 400);
+
+        setTimeout(() => {
+          cardOne.classList.remove("shake", "flip");
+          cardTwo.classList.remove("shake", "flip");
+          cardOne = cardTwo = "";
+          return (disableDeck = false);
+        }, 1200);
+      }
+    }
+
+    memoryCards.forEach((card) => {
+      card.addEventListener("click", flipCard);
+    });
+  </script>
+</html>
